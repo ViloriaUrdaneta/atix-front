@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <h2>
+    <div class="mt-5">
+        <h2 class="my-5">
             Dates Page
         </h2>
         <table class="table">

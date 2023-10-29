@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <h2>Administrar Preguntas</h2>
+    <div class="mt-5">
+        <h2 class="my-4">Administrar Preguntas</h2>
         <table class="table">
             <thead>
                 <tr>
@@ -26,14 +26,14 @@
                         {{ question.answer3 }}
                     </td>
                     <td>
-                        <button @click="editDoctor(doctor)" class="btn btn-primary mx-2">Editar</button>
-                        <button @click="deleteDoctor(doctor.id)" class="btn btn-primary mx-2">Eliminar</button>
+                        <button @click="editQuestion(question)" class="btn btn-primary mx-2">Editar</button>
+                        <button @click="deleteQuestion(question.id)" class="btn btn-primary mx-2">Eliminar</button>
                     </td>
                 </tr>
             </tbody>
         </table>
         <div v-if="editingQuestion">
-            <h3>Editar Pregunta</h3>
+            <h3 class="my-5">Editar Pregunta</h3>
             <form @submit.prevent="updateQuestion"  class="form-group">
                 <div class="mb-3">
                     <label class="form-label">
@@ -79,8 +79,7 @@
                 <button @click="cancelEditQuestion" class="btn btn-primary mx-3">Cancelar</button>
             </form>
         </div>
-
-        <h3>
+        <h3 class="my-5">
             Agregar Pregunta
         </h3>
         <form @submit.prevent="createQuestion()" class="form-group">
@@ -124,7 +123,7 @@
                     required 
                 />
             </div>
-            <button type="submit" class="btn btn-primary">Agregar pregunta</button>
+            <button type="submit" class="btn btn-primary my-3">Agregar pregunta</button>
         </form>
     </div>
 </template>

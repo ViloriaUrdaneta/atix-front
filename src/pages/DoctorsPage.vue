@@ -1,9 +1,9 @@
 <template>
-    <div>
-        <h2>
+    <div class="mt-5">
+        <h2 class="my-5">
             Administrar Doctores
         </h2>
-        <h3>
+        <h3 class="my-5">
             Lista de Doctores
         </h3>
         <table class="table">
@@ -30,7 +30,7 @@
             </tbody>
         </table>
         <div v-if="editingDoctor">
-            <h3>Editar Doctor</h3>
+            <h3 class="my-5">Editar Doctor</h3>
             <form @submit.prevent="updateDoctor()" class="form-group">
                 <div class="mb-3">
                     <label class="form-label">
@@ -67,7 +67,7 @@
                 <button @click="cancelEditDoctor" class="btn btn-primary mx-3">Cancelar</button>
             </form>
         </div>
-        <h3>
+        <h3 class="my-5">
             Agregar Doctor
         </h3>
         <form @submit.prevent="createDoctor()" class="form-group">

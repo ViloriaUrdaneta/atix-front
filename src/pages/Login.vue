@@ -1,9 +1,9 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-    <div class="row">
+    <div class="row mt-5">
         <div class="col-md-6 offset-md-3">
-            <div>
-                <h3>Login {{ firstName }}</h3>
+            <div class="my-5">
+                <h3>Iniciar sesión</h3>
             </div>
             <div class="alert alert-danger" v-if="error">
                 {{ error }}

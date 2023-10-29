@@ -1,41 +1,38 @@
 <template>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand fw-bold mx-5" href="#">MediApp</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <router-link class="nav-link" to="/">Home</router-link>
+                    <li class="nav-item fw-bolder mx-3" v-if="!token && !isAuthenticated">
+                        <router-link class="nav-link" to="/login">Iniciar sesión</router-link>
                     </li>
-                    <li class="nav-item" v-if="!token && !isAuthenticated">
-                        <router-link class="nav-link" to="/login">Login</router-link>
+                    <li class="nav-item fw-bolder mx-3" v-if="!token && !isAuthenticated">
+                        <router-link class="nav-link" to="/signup">Registrarse</router-link>
                     </li>
-                    <li class="nav-item" v-if="!token && !isAuthenticated">
-                        <router-link class="nav-link" to="/signup">Signup</router-link>
+                    <li class="nav-item fw-bolder mx-3" v-if="(token || isAuthenticated) && (role === 'patient' || userRole === 'patient')">
+                        <router-link class="nav-link" to="/onboard">Datos personales</router-link>
                     </li>
-                    <li class="nav-item" v-if="(token || isAuthenticated) && (role === 'patient' || userRole === 'patient')">
-                        <router-link class="nav-link" to="/onboard">Onboarding</router-link>
+                    <li class="nav-item fw-bolder mx-3" v-if="(token || isAuthenticated) && (role === 'patient' || userRole === 'patient')">
+                        <router-link class="nav-link" to="/questions">Preguntas</router-link>
                     </li>
-                    <li class="nav-item" v-if="(token || isAuthenticated) && (role === 'patient' || userRole === 'patient')">
-                        <router-link class="nav-link" to="/questions">Questions</router-link>
+                    <li class="nav-item fw-bolder mx-3" v-if="(token || isAuthenticated) && (role === 'admin' || userRole === 'admin')">
+                        <router-link class="nav-link" to="/questionsEdit">Listado de preguntas</router-link>
                     </li>
-                    <li class="nav-item" v-if="(token || isAuthenticated) && (role === 'admin' || userRole === 'admin')">
-                        <router-link class="nav-link" to="/questionsEdit">Edit questions</router-link>
+                    <li class="nav-item fw-bolder mx-3" v-if="(token || isAuthenticated) && (role === 'admin' || userRole === 'admin')">
+                        <router-link class="nav-link" to="/doctors">Listado de doctores</router-link>
                     </li>
-                    <li class="nav-item" v-if="(token || isAuthenticated) && (role === 'admin' || userRole === 'admin')">
-                        <router-link class="nav-link" to="/doctors">Doctors</router-link>
+                    <li class="nav-item fw-bolder mx-3" v-if="(token || isAuthenticated) && (role === 'patient' || userRole === 'patient')">
+                        <router-link class="nav-link" to="/dates">Citas</router-link>
                     </li>
-                    <li class="nav-item" v-if="(token || isAuthenticated) && (role === 'patient' || userRole === 'patient')">
-                        <router-link class="nav-link" to="/dates">Dates</router-link>
+                    <li class="nav-item fw-bolder mx-3" v-if="(token || isAuthenticated) && (role === 'admin' || userRole === 'admin')">
+                        <router-link class="nav-link" to="/datesEdit">Citas</router-link>
                     </li>
-                    <li class="nav-item" v-if="(token || isAuthenticated) && (role === 'admin' || userRole === 'admin')">
-                        <router-link class="nav-link" to="/datesEdit">Dates</router-link>
-                    </li>
-                    <li class="nav-item" v-if="token || isAuthenticated">
-                        <a href="#" class="nav-link" @click.prevent="onLogout">Logout</a>
+                    <li class="nav-item fw-bolder mx-3" v-if="token || isAuthenticated">
+                        <a href="#" class="nav-link" @click.prevent="onLogout">Cerrar sesión</a>
                     </li>
                 </ul>
             </div>

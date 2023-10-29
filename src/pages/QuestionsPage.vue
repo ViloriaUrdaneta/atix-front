@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <h2>Questions Page</h2>
+    <div class="mt-5">
+        <h2 class="my-5">Questions Page</h2>
         <table class="table">
             <thead>
             <tr>
@@ -51,7 +51,7 @@
             </tr>
             </tbody>
         </table>
-        <button @click="sendAnswers" class="btn btn-primary">Mandar preguntas</button>
+        <button @click="sendAnswers" class="btn btn-primary my-3">Mandar respuestas</button>
     </div>
 </template>
 
