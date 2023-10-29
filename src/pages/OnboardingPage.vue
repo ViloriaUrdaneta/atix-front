@@ -1,8 +1,8 @@
 <template>
-    <div class="row">
+    <div class="row mt-5">
         <div class="col-md-6 offset-md-3">
-            <div>
-                <h3>Onboarding</h3>
+            <div class="my-5">
+                <h3>Datos personales</h3>
             </div>
             <div class="text-success" v-if="succesMessage">
                 {{ succesMessage }}
@@ -36,7 +36,7 @@
                     />
                 </div>
                 <div class="my-3">
-                    <button type="submit" class="btn btn-primary">Onboard</button>
+                    <button type="submit" class="btn btn-primary">Guardar datos</button>
                 </div>
             </form>
         </div>
