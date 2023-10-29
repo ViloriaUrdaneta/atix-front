@@ -20,7 +20,7 @@ Puede hacerlo con el siguiente comando:
 npm install
 ```
 
-3.- Cree un archivo en la raiz del proyecto llama .env.local para las variables de entorno y copie en el la siguiente variable:
+3.- Cree un archivo en la raiz del proyecto llamado .env.local para las variables de entorno y copie en el la siguiente variable:
 ```
 VUE_APP_BASE_URL=http://localhost:3000
 ```
